@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /**
@@ -5,7 +6,7 @@
  *A program that assigns a random number
  *main - this is the main function
  *description - the starting point of program
- *return : 0 (success)
+ *Return: 0 (success)
  *description - this shows we have successfully ended the program
  */
 int main(void)
@@ -15,10 +16,12 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
-		printf("is positive");
+	{
+		printf("%d is positive\n", n);
+	}
 	else if (n == 0)
-		printf("is zero");
+		printf("%d is zero\n", n);
 	else
-		printf("is negative");
+		printf("%d is negative\n", n);
 	return (0);
 }

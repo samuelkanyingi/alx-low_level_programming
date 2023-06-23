@@ -1,12 +1,17 @@
 #include <stdio.h>
 /**
- * fizz- fizzbuzz function
+ * main- entry of a program
+ * Return: always 0
  */
 void fizz(void);
 int main(void)
 {
 	fizz();
+	return (0);
 }
+/**
+ * fizz- fizzbuzz function
+ */
 void fizz(void)
 {
 	int i;

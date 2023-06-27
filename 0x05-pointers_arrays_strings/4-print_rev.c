@@ -9,7 +9,7 @@ void print_rev(char *s)
 {
 	int i = 0;
 	int len;
-	
+
 	if (s == NULL)
 	{
 		printf("invalid string\n");
@@ -22,7 +22,7 @@ void print_rev(char *s)
 	{
 		len++;
 	}
-	for (i = len-1;i>=0;i--) /* iterates characters in reverse order*/
+	for (i = len - 1 ; i >= 0; i--) /* iterates characters in reverse order*/
 	{
 		_putchar(s[i]);
 	}

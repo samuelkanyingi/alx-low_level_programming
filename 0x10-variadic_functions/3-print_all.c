@@ -13,28 +13,28 @@ char c;
 int i;
 float f;
 char *s;
-int index = 0;
+int index_n = 0;
 
 va_list args;
 va_start(args, format);
-while (format[index] != '\0')
+while (format[index_n] != '\0')
 {
-if (format[index] == 'c')
+if (format[index_n] == 'c')
 {
 c = va_arg(args, int);
 printf("%c", c);
 }
-else if (format[index] == 'i')
+else if (format[index_n] == 'i')
 {
 i = va_arg(args, int);
 printf("%d", i);
 }
-else if (format[index] == 'f')
+else if (format[index_n] == 'f')
 {
 f = va_arg(args, double);
 printf("%f", f);
 }
-else if (format[index] == 's')
+else if (format[index_n] == 's')
 {
 s = va_arg(args, char*);
 if (s == NULL)
@@ -46,7 +46,7 @@ else
 printf("%s", s);
 }
 }
-index++;
+index_n++;
 }
 va_end(args);
 printf("\n");

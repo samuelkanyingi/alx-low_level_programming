@@ -46,6 +46,10 @@ else
 printf("%s", s);
 }
 }
+if (format[index_n + 1] != '\0')
+{
+printf(", ");
+}
 index_n++;
 }
 va_end(args);

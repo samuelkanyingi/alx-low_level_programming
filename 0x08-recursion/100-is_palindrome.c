@@ -1,25 +1,33 @@
 #include "main.h"
 #include <string.h>
-#include <stdbool.h>
+
 /**
- * is_palindrome - function that returns 1 if a string is a palindrome and 0 if not.
+ * is_palindrome - function that check if a string is a palindrome.
  * @s:parameter
+ * Return: recursing call
  */
 int is_palindrome(char *s)
 {
-	
-	int len;
+	int ln;
+
 	if (s == NULL)
 	{
 		return (0);
 	}
-	len = strlen(s);
-	if (len == 0)
+	ln = strlen(s);
+	if (ln == 0)
 	{
 		return (1);
 	}
-	return is_palindRecurse(s, 0, len -1);
+	return (is_palindRecurse(s, 0, ln - 1));
 }
+/**
+ * is_palindRecurse - recursive function to see palindrome
+ * @s:array
+ * @begin:integer
+ * @ending:integer
+ * Return: recursive call to check palindrome string
+ */
 int is_palindRecurse(const char *s, int begin, int ending)
 {
 	if (begin >= ending)
@@ -30,5 +38,5 @@ int is_palindRecurse(const char *s, int begin, int ending)
 	{
 		return (0);
 	}
-	return is_palindRecurse(s, begin + 1, ending -1);
+	return (is_palindRecurse(s, begin + 1, ending - 1));
 }

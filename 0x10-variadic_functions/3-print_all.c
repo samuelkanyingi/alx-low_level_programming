@@ -46,7 +46,9 @@ else
 printf("%s", s);
 }
 }
-if (format[index_n + 1] != '\0')
+if (format[index_n + 1] != '\0' &&
+(format[index_n + 1] != 'i' || format[index_n + 1] == 'c'
+|| format[index_n + 1] == 'f' || format[index_n + 1] == 's'))
 {
 printf(", ");
 }

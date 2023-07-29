@@ -1,10 +1,8 @@
 #! /bin/bash
-source = (*.c)
-for source in ${source[@]}
-do
-	fname = "{source%*}"
-	gcc -c ${source} - o ${filename}.o
-done
-ar rcs liball.a *.o
+gcc -c *.c
+ar -rc liball.a *.o
 
-echo "success"
+ranlib liball.a
+
+rm *.o
+

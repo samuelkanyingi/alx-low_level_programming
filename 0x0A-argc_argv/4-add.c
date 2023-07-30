@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - entry of program
  * @argc:number of arguements
@@ -8,22 +9,29 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1;
-	int num2;
-	int sum;
+	int number;
+	int sum = 0;
+	int i;
+	int j;
 
-	if (argc < 1)
+	if (argc == 1)
 	{
 		printf("0\n");
+		return (0);
 	}
-	if (argc != 3)
+	for (i = 1; i < argc; i++)
 	{
-		printf("error\n");
-		return (1);
+	for (j = 0; argv[i][j] != '\0'; j++)
+	{
+	if (!isdigit(argv[i][j]))
+	{
+	printf("Error\n");
+	return (1);
 	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	sum = num1 * num2;
+	}
+	number = atoi(argv[i]);
+	sum = sum + number;
+	}
 	printf("%d\n", sum);
 	return (0);
 }

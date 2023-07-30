@@ -28,14 +28,14 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit (1);
+		exit(1);
 	}
 	int n_bytes = atoi(argv[1]);
 
 	if (n_bytes <= 0)
 	{
 		printf("Error\n");
-		exit (2);
+		exit(2);
 	}
 	p_codes(n_bytes);
 	return (0);

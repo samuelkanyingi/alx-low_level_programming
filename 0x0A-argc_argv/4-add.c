@@ -11,25 +11,25 @@ int main(int argc, char *argv[])
 {
 	int number;
 	int sum = 0;
-	int i;
-	int j;
+	int k;
+	int l;
 
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
-	for (i = 1; i < argc; i++)
+	for (k = 1; k < argc; k++)
 	{
-	for (j = 0; argv[i][j] != '\0'; j++)
+	for (l = 0; argv[k][l] != '\0'; l++)
 	{
-	if (!isdigit(argv[i][j]))
+	if (!isdigit(argv[k][l]))
 	{
 	printf("Error\n");
 	return (1);
 	}
 	}
-	number = atoi(argv[i]);
+	number = atoi(argv[k]);
 	sum = sum + number;
 	}
 	printf("%d\n", sum);

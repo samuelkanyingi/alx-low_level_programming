@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	}
 	int n_bytes = atoi(argv[1]);
 
-	if (n_bytes <= 0)
+	if (n_bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);

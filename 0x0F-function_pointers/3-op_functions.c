@@ -19,7 +19,7 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-	return (a + b);
+	return (a - b);
 }
 /**
  * op_mul- function to multiply
@@ -39,7 +39,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-	return (a + b);
+	return (a / b);
 }
 /**
  * op_mod- function to get remainder

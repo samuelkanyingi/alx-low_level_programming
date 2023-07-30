@@ -11,5 +11,19 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 	else
-		return (sqrt(n));
+		return (sq_helper(n, 0));
+}
+/**
+ * sq_helper-recurive helper func
+ * @n: number to find square root
+ * @z: current number to see
+ * Return: n or -1
+ */
+int sq_helper(int n, int z)
+{
+	if (z * z == n)
+		return (z);
+	if (z * z > n)
+		return (-1);
+	return (sq_helper(n, z + 1));
 }

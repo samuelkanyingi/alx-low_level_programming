@@ -9,19 +9,18 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *new;
+	const listint_t *new = head;
 	int n_cnt = 0;
 
-	while (head != NULL)
+	while (new != NULL)
 	{
-		new = head;
-		head = head->next;
 		printf("[%p]  %d\n", (void *)new, new->n);
-		if (new <= head)
+		if (new <= head->next && new->next != NULL)
 		{
 			printf("-> [%p] %d\n", (void *)head, head->n);
 			exit(98);
 		}
+		new = new->next;
 		n_cnt++;
 	}
 	return (n_cnt);

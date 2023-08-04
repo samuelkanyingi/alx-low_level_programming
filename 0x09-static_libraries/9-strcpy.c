@@ -7,5 +7,13 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	return (dest);
+	char *origin = dest;
+
+	while (*src)
+	{
+		*dest++ = *src++;
+	}
+	*dest = '\0';
+
+	return (origin);
 }

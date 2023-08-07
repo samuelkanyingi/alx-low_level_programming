@@ -9,26 +9,26 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *file;
+	FILE *fil;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	file = fopen(filename, "w");
-	if (file == NULL)
+	fil = fopen(filename, "w");
+	if (fil == NULL)
 	{
 		return (-1);
 	}
 	if (text_content != NULL)
 	{
-		if (fwrite(text_content, sizeof(char *), strlen(text_content), file) != strlen(text_content))
+		if (fwrite(text_content, sizeof(char *), strlen(text_content), fil) != strlen(text_content))
 		{
-			fclose(file);
+			fclose(fil);
 			return (-1);
 		}
 	}
-	if (fclose(file) != 0)
+	if (fclose(fil) != 0)
 	{
 		return (-1);
 	}

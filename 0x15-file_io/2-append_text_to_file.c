@@ -10,21 +10,21 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *file;
+	FILE *fil;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	file = fopen(filename, "a");
-	if (file == NULL)
+	fil = fopen(filename, "a");
+	if (fil == NULL)
 	{
 		return (-1);
 	}
 	if (text_content != NULL)
 	{
-		fprintf(file, "%s", text_content);
+		fprintf(fil, "%s", text_content);
 	}
-	fclose(file);
+	fclose(fil);
 	return (1);
 }

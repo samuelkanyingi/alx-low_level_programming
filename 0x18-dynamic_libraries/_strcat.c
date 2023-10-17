@@ -3,6 +3,7 @@
  * _strcat - function to concatenate source to end
  * @dest:destination source
  * @src: source string
+ * Return: pointer to string
  */
 char *_strcat(char *dest, char *src)
 {

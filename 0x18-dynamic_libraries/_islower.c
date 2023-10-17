@@ -2,7 +2,7 @@
 /**
  * _islower - function to make small letters
  * @c: character
- * Return 1 else 0 if it fails
+ * Return: 1 else 0 if it fails
  */
 int _islower(int c)
 {

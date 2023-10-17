@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _strncat - function to concatenate upto n chars
- * @dest: destination 
+ * @dest: destination
  * @src: source
  * @n: chars
  * Return: d_start
@@ -24,5 +24,5 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	*dest = '\0';
 
-	return d_start;
+	return (d_start);
 }

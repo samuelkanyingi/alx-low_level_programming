@@ -7,7 +7,8 @@
  */
 int _strlen(char *s)
 {
-	int l =0;
+	int l = 0;
+
 	if (s == NULL)
 	{
 		return (-1);

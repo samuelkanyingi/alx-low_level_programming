@@ -33,7 +33,7 @@ int mul(int a, int b)
 }
 
 /**
- * div - function to divide
+ * _div - function to divide
  * @a: first integer
  * @b: second integer
  * Return: division

@@ -85,7 +85,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	n_node->next = ht->array[idx];
 	ht->array[idx] = n_node;
-	/*insert_sorted(ht, n_node);*/
+	insert_sorted(ht, n_node);
 	return (1);
 }
 /**
@@ -185,7 +185,6 @@ void shash_table_delete(shash_table_t *ht)
 			curr = tmp;
 		}
 	}
-	free(ht->array);
 	curr = ht->shead;
 	while (curr != NULL)
 	{
@@ -195,6 +194,45 @@ void shash_table_delete(shash_table_t *ht)
 		free(curr);
 		curr = tmp;
 	}
+	free(ht->array);
 	free(ht);
+}
+void insert_sorted(shash_table_t *ht, shash_node_t *n_node)
+{
+    shash_node_t *current, *prev;
+
+    if (ht == NULL || n_node == NULL)
+        return;
+
+    current = ht->shead;
+    prev = NULL;
+
+    while (current != NULL && strcmp(current->key, n_node->key) < 0)
+    {
+        prev = current;
+        current = current->snext;
+    }
+
+    if (prev == NULL)
+    {
+        n_node->snext = ht->shead;
+        n_node->sprev = NULL;
+        if (ht->shead)
+            ht->shead->sprev = n_node;
+        ht->shead = n_node;
+    }
+    else
+    {
+        prev->snext = n_node;
+        n_node->sprev = prev;
+        n_node->snext = current;
+        if (current)
+            current->sprev = n_node;
+    }
+
+    if (current == NULL)
+    {
+        ht->stail = n_node;
+    }
 }
 

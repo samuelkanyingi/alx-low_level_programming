@@ -1,5 +1,5 @@
 CC = gcc
-SRC = main.c file1.c file2.c
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
@@ -7,7 +7,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY: all clean fclean oclean re
 
 all: m.h $(OBJ)
-        $(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ) $(NAME) *~ \#*\#
